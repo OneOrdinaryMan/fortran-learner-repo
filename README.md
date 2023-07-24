@@ -105,6 +105,50 @@ Two _LOGICAL_ values. _.TRUE._ and _.FALSE._. Periods are important.
 For characters and strings. Length of the string is specified by the _LEN_
 specifier. If no length is specified, the default is 1.
 
+### Arrays
+
+Series of variables can be collected into array. Arrays can be 1 - 7 dimensional
+arrays. Arrays are declared with _DIMENSION_ attribute. Fortran arrays follow 1
+based indexing.
+
+To declare the array,
+
+```f90
+PROGRAM ARRAYS
+    IMPLICIT NONE
+    ! Array with 3 x 4 x 5 dimension.
+    REAL, DIMENSION(3,4,5)::MATRIX
+END PROGRAM ARRAYS
+```
+
+To declare explicit lower bounds,
+
+```f90
+PROGRAM ARRAYS
+    IMPLICIT NONE
+    ! Array with 3 x 4 x 5 dimension.
+    REAL, DIMENSION(0:4)::MATRIX
+END PROGRAM ARRAYS
+```
+
+### Character Strings
+
+String is a character array. The length of the string can be specified with the
+_LEN_ parameter. The slices of string can be referred with (m:n) parameter.
+
+To declare a string,
+
+```f90
+PROGRAM STRING
+    IMPLICIT NONE
+    CHARACTER(LEN = 20)::STRING
+    STRING="lorem ipsum"
+    PRINT *,STRING
+    PRINT *,STRING(:4)
+    PRINT *,STRING(4:)
+END PROGRAM STRING
+```
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
