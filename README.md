@@ -104,3 +104,8 @@ Two _LOGICAL_ values. _.TRUE._ and _.FALSE._. Periods are important.
 
 For characters and strings. Length of the string is specified by the _LEN_
 specifier. If no length is specified, the default is 1.
+
+# License
+
+This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
+the project.
