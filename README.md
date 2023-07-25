@@ -36,6 +36,22 @@ The names in fortran can have a maximum of 31 alphnumeric characters (letters,
 numbers, underscore). The first letter of the identifier must be letter.
 identifiers are case insensitive.
 
+### Implicit typing in fortran
+
+Fortran defaults to implicit typing. It means it will assign the variable type
+based on the first letter of the variable.
+
+If the name of the variable starts with i, j, k, l, m or n, it is an integer.
+Otherwise it is an real number.
+
+It is highly discouraged to use implicit typing. To disable implicit typing,
+
+```f90
+PROGRAM DISABLE
+IMPLICIT NONE
+END PROGRAM DISABLE
+```
+
 ### Variables
 
 A variable is a data object which can be defined and redefined. All variables
@@ -147,6 +163,27 @@ PROGRAM STRING
     PRINT *,STRING(:4)
     PRINT *,STRING(4:)
 END PROGRAM STRING
+```
+
+### Derived Data types
+
+Derived data type is basically a struct. It consists of different types inside
+it.
+
+To access the types inside the derived type, use _%_ operator. To create a
+derived type,
+
+```f90
+PROGRAM DERIVED_TYPE
+    TYPE::PERSON
+        CHARACTER(LEN=20)::NAME
+        INTEGER::AGE
+    END TYPE PERSON
+    IMPLICIT NONE
+    TYPE(PERSON)::PERSON_1
+    PERSON_1%CHARACTER="John Doe"
+    PERSON_1%AGE=18
+END PROGRAM DERIVED_TYPE
 ```
 
 # License
