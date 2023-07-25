@@ -222,6 +222,34 @@ Fortran supports the following operators,
 - <= (Less than or equal to)
 - /= (Not equal to)
 
+## Intrinsic functions
+
+Fortran provides these intrinsic function by default.
+
+| Function name           | Purpose                                            |
+| ----------------------- | -------------------------------------------------- |
+| abs(x)                  | absolute value of numeric argument                 |
+| acos(x)                 | inverse cosine function                            |
+| asin (x)                | inverse sine function                              |
+| atan (x)                | inverse tan function                               |
+| complx (x, y, [,ikind]) | converts to complex                                |
+| cos (x)                 | cos function                                       |
+| cosh (x)                | hyperbolic cosine function                         |
+| exp (x)                 | exponential function                               |
+| floor (x)               | greatest integer less than or equal to x           |
+| int (x)                 | convert to int. Removes the decimal off            |
+| log (x)                 | calculate the natural log of x                     |
+| log10 (x)               | calculate the log base 10 of x                     |
+| mod (x,y)               | remainder function of dividing x/y. x - int(x/y)*y |
+| modulo (x/y)            | modulo function (x - floor(x/y)*y)                 |
+| nint (x, [,ikind])      | round to nearest integer                           |
+| real (x, [,ikind])      | convert to the real number                         |
+| sin (x)                 | sine function                                      |
+| sinh (x)                | hyperbolic sine function                           |
+| sqrt (x)                | square root function                               |
+| tan (x)                 | tan function                                       |
+| tanh (x)                | hyperbolic tan function                            |
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
