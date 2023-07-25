@@ -186,6 +186,42 @@ PROGRAM DERIVED_TYPE
 END PROGRAM DERIVED_TYPE
 ```
 
+## Arithmetic operators
+
+Fortran supports the following operators,
+
+- exponentiation _**_
+- multiplication _*_
+- division _/_
+- addition _+_
+- subtraction _-_
+
+> Fortran follows integer division by default, if no types are specified. To do
+> real division, use the _REAL()_ function.
+
+## Logical operators
+
+Fortran supports the following operators,
+
+- .NOT.
+- .AND.
+- .OR.
+- .EQV.
+- .NEQV.
+
+> .EQV. and .NEQV. are only for logical statements.
+
+## Relational operators
+
+Fortran supports the following operators,
+
+- == (Equal to)
+- \> (Greater than)
+- \>= (Greater than or equal to)
+- < (Less than)
+- <= (Less than or equal to)
+- /= (Not equal to)
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
