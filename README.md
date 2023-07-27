@@ -250,6 +250,50 @@ Fortran provides these intrinsic function by default.
 | tan (x)                 | tan function                                       |
 | tanh (x)                | hyperbolic tan function                            |
 
+## Simple in and output
+
+To output a text in fortran we use _PRINT_ or _WRITE_ functions.
+
+- _PRINT_ will only writes to the stdout.
+- _WRITE_ can write to any file descriptor.
+
+### PRINT
+
+```f90
+PRINT f[,iolist]
+PRINT grname
+```
+
+_PRINT_ takes the following arguments,
+
+- f (format identifier)
+- iolist (list of variables, substrings, arrays, records)
+- grname (name of Namelist group)
+
+#### Format identifier
+
+_f_ is an format identifier and can be,
+
+- An asterisk (*) which indicates list-directed io
+- The label of the _FORMAT_ statement in the program.
+- Integer of the label of _FORMAT_
+- String that identifies the format.
+
+#### iolist
+
+_iolist_ can be empty or contain these output items.
+
+- Variables
+- Substrings
+- Arrays
+- Array elements
+- Record fields
+- Any other expression
+
+#### grname
+
+_grname_ is name of the namelist.
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
