@@ -259,8 +259,10 @@ To output a text in fortran we use _PRINT_ or _WRITE_ functions.
 
 ### PRINT
 
+Prints the given args to the stdout.
+
 ```f90
-PRINT f[,iolist]
+PRINT f [, iolist]
 PRINT grname
 ```
 
@@ -293,6 +295,20 @@ _iolist_ can be empty or contain these output items.
 #### grname
 
 _grname_ is name of the namelist.
+
+### READ
+
+Reads from the unit identifier given to the args specified.
+
+```f90
+READ([UNIT=] u [, [FMT=]f] [, IOSTAT=ios] [, REC=rn] [, END=s] [, ERR=s])iolist 
+READ f [, iolist] 
+READ grname
+```
+
+#### Unit identifier
+
+_u_ can either be external unit identifier
 
 # License
 
