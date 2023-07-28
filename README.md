@@ -63,7 +63,7 @@ To declare a variable,
 ```f90
 PROGRAM VARIABLE
 IMPLICIT NONE
-INTEGER::VAR_1
+INTEGER :: VAR_1
 END PROGRAM VARIABLE
 ```
 
@@ -85,7 +85,7 @@ the _parameter_ attribute.
 ```f90
 PROGRAM CONSTANTS
 IMPLICIT NONE
-INTEGER, PARAMETER::CONST_1 = 500
+INTEGER, PARAMETER :: CONST_1 = 500
 END PROGRAM CONSTANTS
 ```
 
@@ -133,7 +133,7 @@ To declare the array,
 PROGRAM ARRAYS
     IMPLICIT NONE
     ! Array with 3 x 4 x 5 dimension.
-    REAL, DIMENSION(3,4,5)::MATRIX
+    REAL, DIMENSION(3,4,5) :: MATRIX
 END PROGRAM ARRAYS
 ```
 
@@ -143,7 +143,7 @@ To declare explicit lower bounds,
 PROGRAM ARRAYS
     IMPLICIT NONE
     ! Array with 3 x 4 x 5 dimension.
-    REAL, DIMENSION(0:4)::MATRIX
+    REAL, DIMENSION(0:4) :: MATRIX
 END PROGRAM ARRAYS
 ```
 
@@ -157,7 +157,7 @@ To declare a string,
 ```f90
 PROGRAM STRING
     IMPLICIT NONE
-    CHARACTER(LEN = 20)::STRING
+    CHARACTER(LEN = 20) :: STRING
     STRING="lorem ipsum"
     PRINT *,STRING
     PRINT *,STRING(:4)
@@ -175,12 +175,12 @@ derived type,
 
 ```f90
 PROGRAM DERIVED_TYPE
-    TYPE::PERSON
-        CHARACTER(LEN=20)::NAME
-        INTEGER::AGE
+    TYPE :: PERSON
+        CHARACTER(LEN=20) :: NAME
+        INTEGER :: AGE
     END TYPE PERSON
     IMPLICIT NONE
-    TYPE(PERSON)::PERSON_1
+    TYPE(PERSON) :: PERSON_1
     PERSON_1%CHARACTER="John Doe"
     PERSON_1%AGE=18
 END PROGRAM DERIVED_TYPE
