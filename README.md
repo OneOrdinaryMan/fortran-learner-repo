@@ -308,7 +308,185 @@ READ grname
 
 #### Unit identifier
 
-_u_ can either be external unit identifier
+_u_ can either be external unit identifier or internal file identifier.
+
+An external unit identifier must be one of these:
+
+- A nonegative integer expression
+- An asterisk(*), identifying the stdin.
+
+#### Format identifier
+
+_f_ is an format identifier and can be,
+
+- An asterisk (*) which indicates list-directed io
+- The label of the _FORMAT_ statement in the program.
+- Integer of the label of _FORMAT_
+- String that identifies the format.
+
+#### I/O STATUS SPECIFIER
+
+_ios_ must be an integer variable or an integer array element. This will be set
+to zero if the read is successful and set to positive number if the read is
+unsuccessful.
+
+#### Record number
+
+_rn_ must be a positive integer expression, and can be used for direct-access
+files only. rn can be specified for internal files.
+
+#### End-of-File Specifier
+
+_s_ must be the label of an executable statement in the same program unit in
+which the READ statement occurs.
+
+#### Error Specifier
+
+_s_ must be the label of an executable statement in the same program unit in
+which the READ statement occurs.
+
+#### iolist
+
+_iolist_ can be empty or contain these output items.
+
+- Variables
+- Substrings
+- Arrays
+- Array elements
+- Record fields
+- Any other expression
+
+#### grname
+
+_grname_ is name of the namelist.
+
+### WRITE
+
+Writes to the unit identifier given to the args specified.
+
+```f90
+WRITE([UNIT=] u [, [FMT=]f] [, IOSTAT=ios] [, REC=rn] [, END=s] [, ERR=s])iolist 
+WRITE f [, iolist] 
+WRITE grname
+```
+
+#### Unit identifier
+
+_u_ can either be external unit identifier or internal file identifier.
+
+An external unit identifier must be one of these:
+
+- A nonegative integer expression
+- An asterisk(*), identifying the stdin.
+
+#### Format identifier
+
+_f_ is an format identifier and can be,
+
+- An asterisk (*) which indicates list-directed io
+- The label of the _FORMAT_ statement in the program.
+- Integer of the label of _FORMAT_
+- String that identifies the format.
+
+#### I/O STATUS SPECIFIER
+
+_ios_ must be an integer variable or an integer array element. This will be set
+to zero if the write is successful and set to positive number if the read is
+unsuccessful.
+
+#### Record number
+
+_rn_ must be a positive integer expression, and can be used for direct-access
+files only. rn can be specified for internal files.
+
+#### End-of-File Specifier
+
+_s_ must be the label of an executable statement in the same program unit in
+which the WRITE statement occurs.
+
+#### Error Specifier
+
+_s_ must be the label of an executable statement in the same program unit in
+which the WRITE statement occurs.
+
+#### iolist
+
+_iolist_ can be empty or contain these output items.
+
+- Variables
+- Substrings
+- Arrays
+- Array elements
+- Record fields
+- Any other expression
+
+#### grname
+
+_grname_ is name of the namelist.
+
+## Control Constructs
+
+### If constructs
+
+_IF_ statement is used to run a program if the condition given is true.
+
+```f90
+LABEL IF (LOGICAL_EXPRESSION) THEN
+    !STATEMENT
+END IF LABEL
+```
+
+> The label is optional for the if statement.
+
+> Both _ENDIF_ and _END IF_ is allowed.
+
+### If else constructs
+
+_ELSE_ statement can also be used along with the _IF_ for running statements if
+condition was false.
+
+```f90
+LABEL IF (LOGICAL_EXPRESSION) THEN
+    !STATEMENT
+    ELSE
+    !ALTERNATE STATEMENTS
+END IF LABEL
+```
+
+Block if statements can be nested.
+
+```f90
+LABEL IF (LOGICAL_EXPRESSION) THEN
+    !STATEMENT 1
+    ELSE IF (LOGICAL_EXPRESSION) THEN
+    !STATEMENT 2
+    ELSE IF (LOGICAL_EXPRESSION) THEN
+    !STATEMENT 3
+    ELSE IF (LOGICAL_EXPRESSION) THEN
+    !STATEMENT 4
+    ELSE 
+    !ALTERNATE STATEMENTS
+END IF LABEL
+```
+
+### Case constructs
+
+The case construct has the following form,
+
+```f90
+LABEL SELECT CASE (EXPRESSION)
+    CASE (SELECTOR_1):
+    !STATEMENT
+    CASE (SELECTOR_2):
+    !STATEMENT
+    CASE (SELECTOR_3):
+    !STATEMENT
+    CASE DEFAULT:
+    !DEFAULT STATEMENT
+    END SELECT LABEL
+```
+
+> Range of numbers can be specified in a case using (m:n)
 
 # License
 
