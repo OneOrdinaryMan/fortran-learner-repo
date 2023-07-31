@@ -1,0 +1,26 @@
+PROGRAM LOOPS
+    IMPLICIT NONE
+    INTEGER :: VAR_1
+    INTEGER :: VAR_2 = 0
+    CHARACTER :: VAR_3
+    ! ENDLESS DO
+    ENDLESS: DO
+        READ (*,*) VAR_3
+        IF (VAR_3 == 'S') THEN
+            CYCLE ENDLESS
+        END IF
+        IF (VAR_3 == 'Q') THEN
+            EXIT ENDLESS
+        END IF
+        PRINT *, VAR_3
+    END DO ENDLESS
+    ! DO WITH CONTROL VARIABLE
+    CONTROL: DO VAR_1 = 0,5,1
+        PRINT "(I1)", VAR_1
+    END DO CONTROL
+    ! DO WHILE LOOP
+    DO_WHILE: DO WHILE (VAR_2 /= 5)
+    PRINT *, "HELLO, WORLD!"
+    VAR_2 = VAR_2 + 1
+    END DO DO_WHILE
+END PROGRAM LOOPS
