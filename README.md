@@ -488,6 +488,60 @@ LABEL SELECT CASE (EXPRESSION)
 
 > Range of numbers can be specified in a case using (m:n)
 
+## Loops
+
+### Do loops
+
+The simplest loop can be achieved using _DO_ loop in fortran. The following code
+is an endless loop.
+
+```f90
+LABEL DO
+    !STATEMENT
+END DO LABEL
+```
+
+To break out of the do loop, use the _EXIT_ statement.
+
+```f90
+LABEL DO
+    !STATEMENT
+    IF (EXPRESSION) THEN
+    EXIT
+    END IF
+END DO LABEL
+```
+
+To skip to the next iteration use _CYCLE_ statement.
+
+```f90
+LABEL DO
+    !STATEMENT
+    IF (EXPRESSION) THEN
+    CYCLE
+    END IF
+END DO LABEL
+```
+
+To specify a do to iterate said times. use a _DO VAR=START, END, STEP_ statement
+
+```f90
+INTEGER :: I !CONTROL VARIABLE
+DO I=0,5
+    !STATEMENTS
+END DO
+```
+
+### Do while Loop
+
+To execute a condition while true, use _DO WHILE_ loop.
+
+```f90
+LABEL DO WHILE (LOGICAL EXPRESSION)
+    !STATEMENTS
+END DO WHILE LABEL
+```
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
