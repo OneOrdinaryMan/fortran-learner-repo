@@ -625,6 +625,33 @@ END FUNCTION CIRCLE_AREA
 
 To return from a function early, use the _RETURN_ keyword.
 
+### Subroutines
+
+Functions are only used in case it returns only one thing. In all other cases,
+subroutines are used. Subroutines returns nothing. Subroutines may or may not
+modify the arguments given. Subroutines has to be called and cannot be assigned
+to a variable.
+
+```f90
+PROGRAM SWAP_NUMBERS
+    IMPLICIT NONE
+    REAL :: X = 5
+    REAL :: Y = 6
+    PRINT *,X,Y
+    CALL SWAP (X,Y)
+    PRINT *,X,Y
+END PROGRAM SWAP_NUMBERS
+SUBROUTINE SWAP (X,Y)
+    IMPLICIT NONE
+    REAL :: BUFFER
+    REAL :: X
+    REAL :: Y
+    BUFFER = X
+    X = Y
+    Y = BUFFER
+END SUBROUTINE SWAP
+```
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
