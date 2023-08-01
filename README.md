@@ -652,6 +652,37 @@ SUBROUTINE SWAP (X,Y)
 END SUBROUTINE SWAP
 ```
 
+#### Intent
+
+Fortran allows the specification of intention of the arguments used for in the
+subroutine. There are three intents,
+
+- _INTENT (IN)_ Arguments are read only
+- _INTENT (OUT)_ Arguments are write only
+- _INTENT (INOUT)_ Arguments are read and write allowed
+
+Intents are mentioned as options in argument type declaration.
+
+```f90
+PROGRAM SWAP_NUMBERS
+    IMPLICIT NONE
+    REAL, INTENT (INOUT) :: X = 5
+    REAL, INTENT (INOUT) :: Y = 6
+    PRINT *,X,Y
+    CALL SWAP (X,Y)
+    PRINT *,X,Y
+END PROGRAM SWAP_NUMBERS
+SUBROUTINE SWAP (X,Y)
+    IMPLICIT NONE
+    REAL :: BUFFER
+    REAL :: X
+    REAL :: Y
+    BUFFER = X
+    X = Y
+    Y = BUFFER
+END SUBROUTINE SWAP
+```
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
