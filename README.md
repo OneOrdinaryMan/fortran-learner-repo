@@ -542,6 +542,89 @@ LABEL DO WHILE (LOGICAL EXPRESSION)
 END DO WHILE LABEL
 ```
 
+## Procedures
+
+A program can be built up from a collection of program units. They are,
+
+- Main program
+- Modules
+- External subprogramms or Procedures
+
+## Subprogram or procedures
+
+Subprogramms or Procedures can be called from the program.They can be,
+
+1. Functions
+2. Subroutines
+
+### Functions
+
+Functions accepts arguments and returns a single quantity of any type including
+arrays.
+
+> Functions in principle should not modify the arguments. It is a bad practice.
+
+Functions are of two types. They are,
+
+1. _Intrinsic Functions:_ They are built into the language itself.
+2. _External Functions:_ They are user defined.
+
+Structure of functions is,
+
+```f90
+FUNCTION CIRCLE_AREA (RADIUS)
+    IMPLICIT NONE
+    REAL :: CIRCLE_AREA
+    REAL :: RADIUS
+    REAL, PARAMETER :: PI = 3.141592654
+    CIRCLE_AREA = PI * ( R**2 )
+END FUNCTION CIRCLE_AREA
+```
+
+Functions return value is the function name itself. Return type and the argument
+type should be declared inside the function. Arguments are dummy and the real
+variable from where the function is called is used.
+
+> Note that _IMPLICIT NONE_ should be used inside the function as well as the
+> main program.
+
+The result of the function can be given a different name using the _RESULT_
+option. The _RESULT_ option is optional in most cases but must be used when
+using the recursive functions.
+
+```f90
+FUNCTION CIRCLE_AREA (RADIUS) RESULT (AREA)
+    IMPLICIT NONE
+    REAL :: CIRCLE_AREA
+    REAL :: RADIUS
+    REAL, PARAMETER :: PI = 3.141592654
+    AREA = PI * ( R**2 )
+END FUNCTION CIRCLE_AREA
+```
+
+To call the function from the program, one must declare the function with type
+to use. Functions can be assigned to the variables directly.
+
+```f90
+PROGRAM MAIN
+    IMPLICIT NONE
+    REAL, PARAMETER :: RADIUS = 2
+    REAL :: CIRCLE_AREA
+    PRINT *, CIRCLE_AREA (RADIUS)
+END PROGRAM MAIN
+FUNCTION CIRCLE_AREA (RADIUS)
+    IMPLICIT NONE
+    REAL :: CIRCLE_AREA
+    REAL :: RADIUS
+    REAL, PARAMETER :: PI = 3.141592654
+    CIRCLE_AREA = PI * ( R**2 )
+END FUNCTION CIRCLE_AREA
+```
+
+#### RETURN Statements
+
+To return from a function early, use the _RETURN_ keyword.
+
 # License
 
 This project is licensed under _GNU GPL v3.0 or later_ license. Feel free to use
